@@ -24,8 +24,9 @@ class MainScreen extends ConsumerWidget {
           title: 'Subjects',
           body: const NoteSubjectsTab(),
           floatingActionButton: NewButton(
-              onPressed: () => newNoteSubject(context, ref),
-              label: 'New Subject',),
+            onPressed: () => newNoteSubject(context, ref),
+            label: 'New Subject',
+          ),
         ),
       );
 
@@ -36,7 +37,7 @@ class MainScreen extends ConsumerWidget {
         builder: (final getTextContext) => GetText(
           onDone: (final name) async {
             Navigator.pop(getTextContext);
-            final database = ref.read(databaseProvider);
+            final database = await ref.read(databaseProvider.future);
             await database.noteSubjectsDao.createNoteSubject(name);
             ref.invalidate(noteSubjectsProvider);
           },

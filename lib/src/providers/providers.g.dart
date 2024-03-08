@@ -6,13 +6,13 @@ part of 'providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$databaseHash() => r'eb223104fb698b48fed8e908ad529af188b53f4d';
+String _$databaseHash() => r'ca44b2a7c2cff851be88f672d63dc8066ee16c8f';
 
 /// Provide the database.
 ///
 /// Copied from [database].
 @ProviderFor(database)
-final databaseProvider = AutoDisposeProvider<HappeningsDatabase>.internal(
+final databaseProvider = AutoDisposeFutureProvider<HappeningsDatabase>.internal(
   database,
   name: r'databaseProvider',
   debugGetCreateSourceHash:
@@ -21,8 +21,8 @@ final databaseProvider = AutoDisposeProvider<HappeningsDatabase>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef DatabaseRef = AutoDisposeProviderRef<HappeningsDatabase>;
-String _$noteSubjectsHash() => r'36abd646c9fdf107997c4bfc8eacbfa54c71829a';
+typedef DatabaseRef = AutoDisposeFutureProviderRef<HappeningsDatabase>;
+String _$noteSubjectsHash() => r'82136df1b4c9a801b993618187d029f7a09f5719';
 
 /// Return all subjects.
 ///
@@ -39,7 +39,7 @@ final noteSubjectsProvider =
 );
 
 typedef NoteSubjectsRef = AutoDisposeFutureProviderRef<List<NoteSubject>>;
-String _$subjectNotesHash() => r'90f4050fcffa71af13902f5cdbdbc60cbe415361';
+String _$subjectNotesHash() => r'035d0111b5d195d135e9eb8817dd3a2089acf858';
 
 /// Copied from Dart SDK
 class _SystemHash {

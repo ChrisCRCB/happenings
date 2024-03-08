@@ -90,7 +90,7 @@ class NotesScreen extends ConsumerWidget {
       builder: (final builderContext) => GetText(
         onDone: (final text) async {
           Navigator.pop(context);
-          final database = ref.read(databaseProvider);
+          final database = await ref.read(databaseProvider.future);
           await database.notesDao.createNote(
             noteSubject: noteSubject,
             body: text,
